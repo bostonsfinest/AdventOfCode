@@ -21,8 +21,7 @@ def compute_intcode_part1():
     for ind in range(0, len(ic_arr[1]), 4):
         ic_arr = compute(ic_arr[1], ind)
         if ic_arr[0]:
-            print("PART1")
-            print(ic_arr[1][0])
+            print(f"PART 1: {ic_arr[1][0]}")
             return
 
 
@@ -38,11 +37,7 @@ def compute_intcode_part2():
             for ind in range(0, len(ic_arr[1]), 4):
                 ic_arr = compute(ic_arr[1], ind)
                 if ic_arr[0] and ic_arr[1][0] == 19690720:
-                    print("PART2")
-                    print('noun', noun)
-                    print('verb', verb)
-                    print(f'100 * noun + verb: {100 * noun + verb}')
-                    print(ic_arr[1][0])
+                    print(f"PART 2: {100 * noun + verb}")
                     return
                 if ic_arr[0]:
                     break

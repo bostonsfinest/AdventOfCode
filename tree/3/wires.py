@@ -1,4 +1,6 @@
 import sys
+import time
+import numpy as np
 # from matplotlib import pyplot as plt
 
 central_port = (0, 0)
@@ -35,7 +37,8 @@ def manhattan_dist(p):
     return abs(p[0]) + abs(p[1])
 
 
-def day3_winner(file='moves.txt'):
+def macgyver(file='directions.txt'):
+    start_time = time.time()
     with open(file) as f:
         red = f.readline().strip()
         blue = f.readline().strip()
@@ -73,10 +76,9 @@ def day3_winner(file='moves.txt'):
         if tmp_md < md and tmp_md != 0:
             md = tmp_md
 
-    print(md)
+    print(f"PART 1: {md}")
 
-    # PART2
-    print("PART2")
+    # PART 2
     red_steps = []
     blue_steps = []
     rsteps = 0
@@ -102,7 +104,9 @@ def day3_winner(file='moves.txt'):
     for i in range(len(red_steps)):
         wire_lengths.append(red_steps[i]+blue_steps[i])
 
-    print(min(wire_lengths))
+    print(f"PART 2: {min(wire_lengths)}")
+    end_time = time.time()
+    return end_time-start_time
 
     # x1 = [x[0] for x in red_points]
     # y1 = [x[1] for x in red_points]
@@ -114,8 +118,11 @@ def day3_winner(file='moves.txt'):
     # plt.show()
         
 if __name__ == '__main__':
-    day3_winner('moves.txt')
-
-
+    # times = []
+    # for _ in range(100):
+    #     t = macgyver()
+    #     times.append(t)
+    # print(np.mean(times)*1000)
+    macgyver()
             
 
