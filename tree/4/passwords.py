@@ -1,4 +1,5 @@
 import numpy as np
+from matplotlib import pyplot as plt
 
 LBOUND = '138241'
 UBOUND = '674034'
@@ -43,6 +44,22 @@ def bolt_cutter():
 
     # print(final_pwds)
     print(f"PART 2: {len(final_pwds)}")
+
+    # npz = np.ones(len(narrowed_pwds))
+    # fpz = np.zeros(len(final_pwds))
+
+    # overlap = list(set(narrowed_pwds).intersection(final_pwds))
+    # oz = []
+    # for _ in range(len(overlap)):
+    #     oz.append(0.5)
+
+    # plt.plot(narrowed_pwds, npz.tolist(), 'o', label='Part 1', markersize=2)
+    # plt.plot(overlap, oz, 'o', label='Intersection', markersize=2)
+    # plt.plot(final_pwds, fpz.tolist(), 'o', label='Part 2', markersize=2)
+    # plt.legend(fancybox=False)
+    # plt.show()
+
+
 
 if __name__ == '__main__':
     bolt_cutter()
